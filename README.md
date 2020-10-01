@@ -35,7 +35,7 @@ systemctl enable docker
 abaixo.
 
 ```
-docker version
+sudo docker version
 ```
 
 ## Passos para instalação do Portainer
@@ -49,19 +49,19 @@ sistema, pois só precisamos garantir o suporte do sistema para Docker.
 usando o comando docker pull abaixo.
 
 ```
-docker pull portainer/portainer
+sudo docker pull portainer/portainer
 ```
 2. Agora execute o Portainer usando o comando docker abaixo:
 
 ```
-docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+sudo docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
 ```
 
 4. O Portainer agora está sendo executado como um contêiner, verifique-o
 usando o comando abaixo:
 
 ```
-docker ps
+sudo docker ps
 ```
 5. Acessar o seguinte link na sua máquina: *http://localhost:9000*
 
