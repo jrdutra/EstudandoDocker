@@ -162,13 +162,13 @@ EXPOSE 8000
 3. Jpa na raiz do projeto, execute o seguinte comando para criar a imagem do seu container:
 
 ```
-sudo docker build -t imagemLaravel .
+sudo docker build -t imagemlaravel .
 ```
 
 4. Após concluir o processo, deve-se criar o container com o seguinte comando:
 
 ```
-sudo docker run -p 8000:8000 imagemLaravel
+sudo docker run -p 8000:8000 imagemlaravel
 ```
 
 Lembrando que os passos 3 e 4 podem ser feitos pela interface gráfica do [Portainer](https://www.portainer.io/).
