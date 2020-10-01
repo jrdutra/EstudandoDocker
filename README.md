@@ -148,6 +148,11 @@ RUN docker-php-ext-install pdo mbstring
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
+# Install Postgre PDO
+RUN apt-get install -y libpq-dev \
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-install pdo pdo_pgsql pgsql
+
 WORKDIR /app
 COPY . /app
 RUN composer install
@@ -156,6 +161,7 @@ CMD php artisan serve --host=0.0.0.0 --port=8000
 EXPOSE 8000
 
 ```
+**Esse Dockerfile serve tanto para aplicaçẽos que utilizem o mysql como banco quanto o postgres**
 
 2. Abra um terminal e navegue até a raiz do seu proejto. `cd ./raizProjeto`
 
