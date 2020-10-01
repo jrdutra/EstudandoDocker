@@ -51,14 +51,19 @@ usando o comando docker pull abaixo.
 ```
 docker pull portainer/portainer
 ```
+2. Agora execute o Portainer usando o comando docker abaixo:
 
-2. O Portainer agora está sendo executado como um contêiner, verifique-o
+```
+docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
+```
+
+4. O Portainer agora está sendo executado como um contêiner, verifique-o
 usando o comando abaixo:
 
 ```
 docker ps
 ```
-3. Acessar o seguinte link na sua máquina: *http://localhost:9000*
+5. Acessar o seguinte link na sua máquina: *http://localhost:9000*
 
 ## Como colocar uma aplicação Laravel:5.7 em produção em um container
 
