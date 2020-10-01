@@ -1,6 +1,6 @@
 # Iniciando com Docker
 
-O Docker é uma plataforma open source que facilita a criação e administração de ambientes isolados. Ele possibilita o empacotamento de uma aplicação ou ambiente dentro de um container, se tornando portátil para qualquer outro host que contenha o Docker instalado.
+O Docker é uma plataforma open source que facilita a criação e administração de ambientes isolados. Ele possibilita o empacotamento de uma aplicação ou ambiente dentro de um container, se tornando portátil para qualquer outro host que contenha o [Docker](https://www.docker.com/) instalado.
 
 Fonte: [TreinaWeb](https://www.treinaweb.com.br/blog/no-final-das-contas-o-que-e-o-docker-e-como-ele-funciona/#:~:text=O%20Docker%20%C3%A9%20uma%20plataforma,que%20contenha%20o%20Docker%20instalado.)
 
@@ -42,7 +42,7 @@ docker version
 
 O Portainer pode ser instalado em um contêiner docker ou separadamente sem
 um contêiner docker. Neste tutorial, instalaremos o Portainer como um
-contêiner Docker. É realmente simples de instalar e executar em qualquer
+contêiner [Docker](https://www.docker.com/). É realmente simples de instalar e executar em qualquer
 sistema, pois só precisamos garantir o suporte do sistema para Docker.
 
 1. Antes de instalar o Portainer, baixe a imagem do Portainer do DockerHub
@@ -166,7 +166,7 @@ sudo docker build -t imagemLaravel .
 sudo docker run -p 8000:8000 imagemLaravel
 ```
 
-Lembrando que os passos 3 e 4 podem ser feitos pela interface gráfica do Portainer.
+Lembrando que os passos 3 e 4 podem ser feitos pela interface gráfica do [Portainer](https://www.portainer.io/).
 
 **Nesse ponto, a sua aplicação laravel deve estar rodando na porta 8000**
 
