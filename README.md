@@ -69,16 +69,39 @@ sudo docker ps
 
 O primeiro passo para colocar uma aplicação laravel em produção, é desvincula-la do arquivo .env.
 
-Isso pode ser feito passando as configurações do arquivo .env para alguns arquivos situados na pasta `./config`.
+Isso pode ser feito passando as configurações do arquivo .env para alguns arquivos situados na pasta `./config` que fica na raiz do projeto.
 
-1. Vá até a pasta `./config`, abra o arquivo `database.php` e elimine a função .env das configurações do seu respectivo banco. se preferir, a função pode ser mantida, mas os parâmetros devem ser setados. no trecho de exemplo para o banco *mysql* ficaria assim:
+* Acesse a pasta do projeto com o comando
+
+```
+cd /RaizDoProjeto
+```
+
+* Vá até a pasta `./config`, abra o arquivo `database.php` e substitua a seguinte linha:
+
+```php
+'default' => env('DB_CONNECTION', 'mysql'),
+```
+
+* Pela linha:
+
+```php
+//LOCAL
+//'default' => env('DB_CONNECTION', 'mysql'),
+//SERVIDOR
+'default' => env('DB_CONNECTION', 'postegres'),
+
+```
+
+
+* Ainda no mesmo arquivo (`./config`) elimine a função .env das configurações do seu respectivo banco. se preferir, a função pode ser mantida, mas os parâmetros devem ser setados. no trecho de exemplo para o banco *mysql* ficaria assim:
 
 ```php
 'mysql' => [
             'driver' => 'mysql',
             'host' => 'IP DO BANCO AQUI',
             'port' => '3306',
-            'database' => 'laravel_joao',
+            database' => 'laravel_joao',
             'username' => 'seuusuario',
             'password' => 'suasenha',
             'unix_socket' => env('DB_SOCKET', ''),
@@ -109,7 +132,7 @@ No caso do postgres ficaria assim com a função *env()*.
         ],
 ```
 
-Depois, dentro da mesma pasta, deve-se configurar o arquivo `app.php`. Indo até a chave 'KEY' e colocando a chave que está no campo 'APP_KEY' do arquivo `.env`.
+* Depois, dentro da mesma pasta, deve-se configurar o arquivo `app.php`. Indo até a chave 'KEY' e colocando a chave que está no campo 'APP_KEY' do arquivo `.env`.
 
 Por exemplo, se no arquivo `.env``está assim:
 
@@ -123,7 +146,7 @@ No arquivo  `app.php` deve ficar assim:
 'key' => 'base64:21jtcVlnjAUgddIAgRQX1HNNCfiNAEPGv6mp9xgOhdg='
 ```
 
-O próximo passo é criar o arquivo Dockerfile e colocar na raiz do projeto...
+* O próximo passo é criar o arquivo Dockerfile e colocar na raiz do projeto...
 
 ### O arquivo Dockerfile
 
