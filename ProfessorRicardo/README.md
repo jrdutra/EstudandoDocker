@@ -50,13 +50,16 @@ sudo docker pull ubuntu:18.04
 sudo docker run <nome_na_imagem>
 ```
 
-Comando genérico: `docker run [options] IMAGE [command][args]
+Comando genérico: `docker run [options] IMAGE [command][args]`
 
 Como opções podemos ter: 
 
 **-i** = Iniciar interação com o container
+
 **-t** = Iniciar com um terminal de comando (Digitando exit para sair)
+
 **-d** =0,Iniciar o container em segundo plano
+
 **-rm** = Remover o container após termino 
 
 Você pode dar o comando com o nome da imagem e ele vai levantar um container com um nome aleatorio referente a essa imagem.
