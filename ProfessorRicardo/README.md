@@ -89,7 +89,7 @@ sudo docker run -it ubuntu bash
 sudo apt-get update && sudo apt-get install nano
 ```
 
-# EXERCICIOS
+# EXERCÍCIOS
 
 ## Tarefa 1:
 
@@ -110,15 +110,20 @@ Para realização dessa tarefa, você deve mostrar como executar essa ferramenta
 **Resposta** 
 
 ```
-sudo docker run uzyexe/nmap nmap -sS 127.0.0.1
+sudo docker run --rm --name nmap uzyexe/nmap -sS google.com
 ```
 
 **MODO 2** - Instalando a ferramenta diretamente no container, de imagem Ubuntu:18.04, e executando-a a partir dele
 
 **Resposta** 
 ```
-sudo docker run -it ubuntu:18.04 bash
-# nmap -sS 127.0.0.1
+sudo docker run -it --name nmap_ubuntu ubuntu:18.04 bash
+
+apt-get update
+
+apt-get install nmap
+
+nmap -sS google.com
 ```
 
 
