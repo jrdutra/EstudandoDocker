@@ -81,6 +81,76 @@ Onde o `docker ps` lista os ativos e o `docker ps -a` lista todos os containers,
 **Resumo**
 ![Admnistração de containers](https://raw.githubusercontent.com/jrdutra/EstudandoDocker/master/ProfessorRicardo/administracao.jpg)
 
+**Executar, parar e remover**
+
+Parar um container:
+
+```
+sudo docker stop <nome_container>
+```
+
+Iniciar um container 
+
+```
+sudo docker start <nome_container>
+```
+
+Pausar ou hibernar um container:
+
+```
+sudo docker pause <nome_container>
+```
+
+Para remover container:
+
+```
+sudo docker rm <nome_container>
+```
+
+Remover todos containers inativos:
+
+```
+sudo docker container prune
+```
+
+Remover imagem
+
+```
+sudo docker rmi nome_container:versao
+```
+
+Remover todas as imagens
+
+```
+sudo docker image prune
+```
+
+Remover todas as imagens que não está em uso
+
+```
+sudo docker image prune -a
+```
+
+**Obtendo mais informações**
+
+Obter informações de um container específico
+
+```
+sudo docker inspect nome_container
+```
+
+Ver os logs de um container e/ou o que está passando no terminal do container
+
+```
+sudo docker logs nome_container
+```
+
+Verificar estatística dos container
+
+```
+sudo docker stats
+```
+
 # Exemplos
 
 **Levantar o container e rodar o comando logo após**
