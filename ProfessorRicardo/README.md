@@ -79,16 +79,19 @@ Onde o `docker ps` lista os ativos e o `docker ps -a` lista todos os containers,
 # Exemplos
 
 **Levantar o container e rodar o comando logo após**
+```
 sudo docker run debian cat /etc/issue.net
+```
 
 **Levandar o container e rodar o comando depois que o container subiu**
+```
 sudo docker run -it ubuntu bash
 sudo apt-get update && sudo apt-get install nano
-
+```
 
 # EXERCICIOS
 
-##Tarefa 1:
+## Tarefa 1:
 
 A tarefa consiste em você executar a ferramenta chamada nmap, para descoberta de serviços ou servidores em uma rede de computadores, e responsável por escanear host específico, a fim de saber se determinado serviço está disponível no mesmo.
 
