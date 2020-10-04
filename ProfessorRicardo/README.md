@@ -192,10 +192,37 @@ Copiar um arquivo da maquina local para o container
 sudo docker cp arquivo.txt nome_container:/caminho/arquivo.txt
 ```
 
+**Backup de containers**
 
+Exportar um container
 
+```
+sudo docker export teste | gzip > export_container.tar.gz
+```
 
+Importar um container (Lemnbrando que esse conteiner será importado como imagem)
 
+```
+zcat export_container.tar.gz | docker import . nome_imagem_importada
+```
+
+E para executar esse container
+
+```
+sudo docker run -it --name nome_container importado nome_imagem_importada bash
+```
+
+Para exportar uma imagem
+
+```
+sudo docker save nome_imagem | gzip -c > IMAGEM.tar.gz
+```
+
+Para importar uma imagem
+
+```
+sudo docker load < IMAGEM.tar.gz 
+```
 
 # Exemplos
 
