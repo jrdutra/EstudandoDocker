@@ -78,7 +78,8 @@ Onde o `docker ps` lista os ativos e o `docker ps -a` lista todos os containers,
 
 ## Administração básico de containers/
 
-
+**Resumo**
+![Admnistração de containers](https://raw.githubusercontent.com/jrdutra/EstudandoDocker/master/ProfessorRicardo/administracao.jpg)
 
 # Exemplos
 
