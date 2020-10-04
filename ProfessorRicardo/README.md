@@ -151,6 +151,52 @@ Verificar estatística dos container
 sudo docker stats
 ```
 
+**Interagir com o container**
+
+Entrar dentro do container (Para sair, utilizar Ctrl+p Ctrl+q)
+
+```
+sudo docker attach nome_container
+```
+
+Executar um comando em um container em execução
+
+```
+sudo docker exec nome_container [seu comando]
+```
+
+Executar um comando em backgraud
+
+```
+sudo docker exec -d nome_container [seu comando] 
+```
+
+Outra forma de ter acesso ao shell do container
+
+```
+sudo docker exec -it nome_container bash
+```
+
+e para sair nesse caso, basta um comando `exit`
+
+
+Copiar um arquivo de dentro do container para minha máquina local
+
+```
+sudo docker cp nome_container:/caminho/arquivo.txt .
+```
+
+Copiar um arquivo da maquina local para o container
+
+```
+sudo docker cp arquivo.txt nome_container:/caminho/arquivo.txt
+```
+
+
+
+
+
+
 # Exemplos
 
 **Levantar o container e rodar o comando logo após**
