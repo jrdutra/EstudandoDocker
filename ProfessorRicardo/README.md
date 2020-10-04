@@ -11,22 +11,22 @@ A arquitetura possui 4 elementos
 * Docker Objects
 * Docker Registry
 
-** 1 - Docker Engine**
+**1 - Docker Engine**
 
 É o motor do docker
 
-** 2 - Docker Cliente**
+**2 - Docker Cliente**
 
 Responsável por receber as entradas do usuário, é onde o usuário coloca os comandos do Docker
 
-** 3 - Docker Objects**
+**3 - Docker Objects**
 
 * Imagens: é um template básico para um containers
 * Containers: é o consumo das imagens
 * Network: É o objeto que garante a capacidade de comunicação dos containers
 * Storage: É o objeto de persistencia dos dados do container
 
-** 4 - Docker Registry
+**4 - Docker Registry
 
 É onde as imagens estão salvas na nuvem, o repositório mais utiliado é o docker hub. Podendo ser público ou privado, onde você pode rodar um repositório local.
 
