@@ -58,9 +58,11 @@ Como opções podemos ter:
 
 **-t** = Iniciar com um terminal de comando (Digitando exit para sair)
 
-**-d** =0,Iniciar o container em segundo plano
+**-d** = Iniciar o container em segundo plano
 
-**-rm** = Remover o container após termino 
+**-rm** = Remover o container após termino
+
+**--name** = Fornecer um nome ao container e não deixando a cargo do docker
 
 Você pode dar o comando com o nome da imagem e ele vai levantar um container com um nome aleatorio referente a essa imagem.
 
@@ -69,8 +71,51 @@ Você pode dar o comando com o nome da imagem e ele vai levantar um container co
 ```
 sudo docker ps
 sudo docker ps -a
+sudo watch docker ps
 ```
 
 Onde o `docker ps` lista os ativos e o `docker ps -a` lista todos os containers, inclusive os parados.
+
+# Exemplos
+
+**Levantar o container e rodar o comando logo após**
+sudo docker run debian cat /etc/issue.net
+
+**Levandar o container e rodar o comando depois que o container subiu**
+sudo docker run -it ubuntu bash
+sudo apt-get update && sudo apt-get install nano
+
+
+# EXERCICIOS
+
+##Tarefa 1:
+
+A tarefa consiste em você executar a ferramenta chamada nmap, para descoberta de serviços ou servidores em uma rede de computadores, e responsável por escanear host específico, a fim de saber se determinado serviço está disponível no mesmo.
+
+A sintaxe, de comando nmap, a ser usada é:
+
+```
+nmap -sS [IP address]
+```
+
+Para realização dessa tarefa, você deve mostrar como executar essa ferramenta, em container Docker, usando os modos apresentados abaixo:
+
+**Perguntas dessa tarefa**
+
+**MODO 1** - Usando imagem, do Docker Hub, nomeada uzyexe/nmap
+
+**Resposta** 
+
+```
+sudo docker run uzyexe/nmap nmap -sS 127.0.0.1
+```
+
+**MODO 2** - Instalando a ferramenta diretamente no container, de imagem Ubuntu:18.04, e executando-a a partir dele
+
+**Resposta** 
+```
+sudo docker run -it ubuntu:18.04 bash
+# nmap -sS 127.0.0.1
+```
 
 
