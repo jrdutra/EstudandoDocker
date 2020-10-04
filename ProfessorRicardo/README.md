@@ -76,6 +76,10 @@ sudo watch docker ps
 
 Onde o `docker ps` lista os ativos e o `docker ps -a` lista todos os containers, inclusive os parados.
 
+## Administração básico de containers/
+
+
+
 # Exemplos
 
 **Levantar o container e rodar o comando logo após**
