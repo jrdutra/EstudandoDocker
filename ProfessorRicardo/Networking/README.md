@@ -16,7 +16,7 @@ Plugins drivers:
 2. Overlay
 3. Macvlan
 
-### Modo Bridge
+### Network Driver Bridge
 
 * É a rede padrão que todo container recebe.
 * Faz a ponte entre o host e os containers.
@@ -74,3 +74,4 @@ Comando para criar um container no modo network drive none
 ```
 docker run -itd -net none --name c1_busybox busybox
 ```
+
