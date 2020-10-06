@@ -33,7 +33,7 @@ Plugins drivers:
 sudo docker network inspect bridge
 ```
 
-### Nat port Forwarding / Port Mapping
+##### Nat port Forwarding / Port Mapping (Modo Bridge)
 
 * 1 porta do host <==> 1 Porta do container
 * Mapeamento manual `-p` ou automático `-P`
