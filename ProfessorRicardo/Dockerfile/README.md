@@ -166,7 +166,7 @@ Copia todos os arquivos do diretório atual do Dockerfile para dentro da pasta /
 
 ###### Instrução WORKDIR
 
-Configura um diretorio de trablho. Esse diretório é onde o diretório raiz de trabalho do container.
+Configura um diretorio de trablho. Esse diretório é onde o diretório raiz de trabalho do container. É o diretório onde o container se inicia.
 
 **Exemplo**
 
@@ -193,4 +193,35 @@ Já mapeia um volume de disco para o futuro container docker trabalhar, me isent
 ```
 VOLUME /var/www/html
 ```
+
+###### Instrução CMD
+
+A instrução CMD, diferente da RUN, é executada quando o container dessa imagem é iniciado. O comando RUN é executado ao criar a imagem. O comando CMD é útil para colocar comando que devem ser executados após iniciar o container, por exemplo: 
+Se você está fazendo o deploy de uma aplicação laravel, ao final do arquivo Dockerfile, você deve executar o comando para startar a aplicação laravel, que no caso ficaria como no exemplo:
+
+*shell form*
+
+```
+CMD php artisan serve --host=0.0.0.0 --port=8000
+```
+
+*exec form*
+
+```
+CMD ["php","artisan","serve", "--host=0.0.0.0", "--port=8000"]
+```
+
+O mais utilizado para o comando CMD é o *exec form*.
+
+O CMD executa apenas o comando que é especificado, quando eu faço o comando do `docker run....`, se eu passar parâmetros ao final do comando, o docker sobrescreve esse comando que estava no Dockerfile declarado com o CMD e passa a executar o comando que passei como parâmetro ao executar o `docker run...`.
+
+###### Instrução ENTRYPOINT
+
+É semelhante ao CMD, mas ele présupõe que você está no shell, o mesmo exemplo do CMD, ficaria assim com o Etrypoint:
+
+```
+ENTRYPOINT ["php","artisan","serve"]
+```
+
+No caso do Entrypoint, independente de eu passar ou não mais parâmetros ao final do comando `ocker run...`, o comando especificado no container não é sobrescrito.
 
