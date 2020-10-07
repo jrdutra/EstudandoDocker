@@ -225,3 +225,24 @@ ENTRYPOINT ["php","artisan","serve"]
 
 No caso do Entrypoint, independente de eu passar ou não mais parâmetros ao final do comando `ocker run...`, o comando especificado no container não é sobrescrito.
 
+#### Envio das imagens para o dockerHub
+
+1 - Primeiro você deve criar um conta no site [dockerhub](https://hub.docker.com/)
+
+2 -  Faça o login através do comando:
+
+```
+sudo docker login
+```
+
+ou
+
+```
+sudo docker login --username=jrdutra
+```
+
+3 - Devo rodar o comando docker push:
+
+```
+sudo docker push jrdutra/web2:2.0
+```
