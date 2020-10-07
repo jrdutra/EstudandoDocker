@@ -133,3 +133,64 @@ Configura a image base
 ```
 FROM ubuntu:18.04
 ```
+
+###### Instrução RUN
+
+Pode obedecer o formado *shell form* (Usando barras para quebra de linha)
+
+**Exemplo**
+```
+RUN apt-get update && \
+apt-get install -y \
+apache2 \
+nano
+```
+
+Ou o formado *exec form*
+
+```
+RUN ["apt-get", "install", "apache2", "-y"]
+```
+
+###### Instrução COPY
+
+Copia os arquivos do diretório atual do host (build context) (diretório onde está o Dockerfile) para dentro da imagem.
+
+**Exemplo**
+
+```
+COPY . /app
+```
+
+Copia todos os arquivos do diretório atual do Dockerfile para dentro da pasta /app da imagem.
+
+###### Instrução WORKDIR
+
+Configura um diretorio de trablho. Esse diretório é onde o diretório raiz de trabalho do container.
+
+**Exemplo**
+
+```
+WORKDIR /meudir
+```
+
+###### Instrução EXPOSE
+
+É uma declaração de qual socket de trabalho. Por exemplo se tenho uma aplicação na imagem que roda na porta 8000, devo criar uma imagem com o `EXPOSE 8000`
+
+**Exemplo**
+
+```
+EXPOSE 8000
+```
+
+###### Instrução VOLUME
+
+Já mapeia um volume de disco para o futuro container docker trabalhar, me isentando de ter de criar um novo volume e passar essa instrução para o `docker run`
+
+**Exemplo**
+
+```
+VOLUME /var/www/html
+```
+
