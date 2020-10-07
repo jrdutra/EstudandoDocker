@@ -26,7 +26,7 @@ sudo docker commit [OPTIONS] [CONTAINER] [REPO]
 **[REPO]** Adotar o formato `nomerepo/nomeimagem:versão`
 
 
-#### Exemplo
+##### Exemplo
 
 Criar um container temporário:
 
@@ -68,3 +68,68 @@ Agora eu posso criar outro container a partir dessa minha imagem, faço isso da 
 sudo docker run --name minhaappweb -p 8081:80 jrdutra/debian_web:1.0 /usr/sbin/apache2ctl -D FOREGROUND
 ```
 
+#### Docker Build (Dockerfile)
+
+O dockerfile é como uma receita para criar uma imagem
+
+O processo todo segue os seguintes passos:
+
+1. Criar arquivo Dockerfile
+2. Processo de build
+3. Container podem ser criados usando a imagem criada
+
+##### Exemplo
+
+Devo criar um diretório para os meu arquivos com o comandoi:
+
+```
+mkdir Meudiretorio
+```
+
+Devo entrar no meu diretório
+
+```
+cd Meudiretorio
+```
+
+E então crio meu arquivo Dockerfile
+
+```
+nano Dockerfile
+```
+
+Já no meu arquivo eu insiro as diretiva como no exemplo:
+
+```
+FROM ubuntu:18.04
+RUN apt-get update
+RUN apt-get install apache2 -y
+```
+
+Salvo o arquivo...
+
+No Meudiretorio onde já estou, rodo o docker build para criar a imagem a partir do Dockerfile criado. Uso o seguinte comando:
+
+```
+sudo docker build -t jrdutra/web2:2.0 .
+```
+
+Agora basta subir o container a partir da imagem criada.
+
+```
+sudo docker run -d --name web2 -p 8082:80 jrdutra/web2:2.0 /usr/sbin/apache2ctl -D FOREGROUND
+```
+
+##### Dockerfile Reference
+
+A seguir algumas instruções para criação do Dockerfile
+
+###### Instrução FROM
+
+Configura a image base
+
+**Exemplo**
+
+```
+FROM ubuntu:18.04
+```
