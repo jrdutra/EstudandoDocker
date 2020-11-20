@@ -4,7 +4,7 @@ O Docker é uma plataforma open source que facilita a criação e administraçã
 
 Fonte: [TreinaWeb](https://www.treinaweb.com.br/blog/no-final-das-contas-o-que-e-o-docker-e-como-ele-funciona/#:~:text=O%20Docker%20%C3%A9%20uma%20plataforma,que%20contenha%20o%20Docker%20instalado.)
 
-## Passos para instalação do Docker 
+## Passos para instalação do Docker
 
 1. Antes de instalar pacotes docker, atualize o repositório em seu sistema e
 atualize os pacotes.
